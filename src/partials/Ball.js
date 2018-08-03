@@ -57,7 +57,6 @@ export default class Ball {
   goal(player) {
     player.score++;
     this.reset();
-    console.log(player.score);
   }
 
   //this resets the ball after a player scores a "goal"

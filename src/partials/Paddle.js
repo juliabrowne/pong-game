@@ -9,7 +9,7 @@ export default class Paddle {
     this.height = height;
     this.x = x;
     this.y = y;
-    this.speed = 10;
+    this.speed = 8;
     this.score = 0;
 
     document.addEventListener('keydown', event => {
@@ -25,10 +25,10 @@ export default class Paddle {
   } //end of constructor
 
   up(){
-    this.y = this.y - this.speed;
+    this.y = Math.max(5, this.y - this.speed);
   }
   down(){
-    this.y = this.y + this.speed;
+    this.y = Math.min(this.boardHeight - this.height - 5, this.y + this.speed);
   }
 
 

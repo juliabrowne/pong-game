@@ -5,6 +5,7 @@ import {
 
 import Board from './Board';
 import Paddle from './Paddle';
+import Ball from './Ball';
 
 export default class Game {
 

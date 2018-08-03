@@ -10,18 +10,12 @@ export default class Ball {
     this.direction = 1;
   }
 
-
-
-
-
   render(svg) {
     let ball = document.createElementNS(SVG_NS, 'circle');
     ball.setAttributeNS(null, 'fill', 'white');
     ball.setAttributeNS(null, 'r', this.radius);
-    ball.setAttributeNS(null, 'cx', this.x);
-    ball.setAttributeNS(null, 'cy', this.y);
-
-
+    ball.setAttributeNS(null, 'cx', this.boardWidth/2); //x of the centre point
+    ball.setAttributeNS(null, 'cy', this.boardHeight/2); //y of the centre point
 
     svg.appendChild(ball);
   }

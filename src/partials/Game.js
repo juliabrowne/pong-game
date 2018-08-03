@@ -39,10 +39,16 @@ export default class Game {
 			this.paddleWidth,
 			this.paddleHeight,
 			(this.width - this.boardGap - this.paddleWidth),
-			((this.height - this.paddleHeight)/2),
+			((this.height - this.paddleHeight) / 2),
 			KEYS.up,
 			KEYS.down
 		);
+
+		this.ball = new Ball(
+			8,
+			this.width,
+			this.height,
+		)
 
 	}
 
@@ -62,6 +68,9 @@ export default class Game {
 		//render the paddles
 		this.player1.render(svg);
 		this.player2.render(svg);
+
+		//render the ball
+		this.ball.render(svg);
 	}
 
 }

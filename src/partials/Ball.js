@@ -10,6 +10,12 @@ export default class Ball {
     this.direction = 1;
   }
 
+  //this resets the ball after a player scores a "goal"
+  reset() {
+    this.x = this.boardWidth / 2;
+    this.y = this.boardHeight / 2;
+  }
+
   render(svg) {
     let ball = document.createElementNS(SVG_NS, 'circle');
     ball.setAttributeNS(null, 'fill', 'white');

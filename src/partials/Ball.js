@@ -11,18 +11,6 @@ export default class Ball {
     this.reset();
   }
 
-  //this resets the ball after a player scores a "goal"
-  reset() {
-    this.x = this.boardWidth / 2;
-    this.y = this.boardHeight / 2;
-    this.vy = 0;
-    while (this.vy === 0) {
-      this.vy = Math.floor(Math.random() * 10 - 5);
-    }
-    this.vx = this.direction * (6 - Math.abs(this.vy));
-  }
-
-
   wallCollision() {
     const hitLeft = this.x - this.radius <= 0;
     const hitRight = this.x + this.radius >= this.boardWidth;
@@ -50,16 +38,34 @@ export default class Ball {
         this.vx = -this.vx;
       }
     } else {
+      //detect player 1 collision
       let paddle = player1.coordinates(player1.x, player1.y, player1.width, player1.height);
       let [leftX, rightX, topY, bottomY] = paddle;
       if (
-        (this.x + this.radius <= leftX) &&
-        (this.x + this.radius >= rightX) &&
-        (this.y <= topY && this.y >= bottomY)
-      ){
-        this.vy = -this.vy;
+        (this.x - this.radius <= rightX) &&
+        (this.x - this.radius >= leftX) &&
+        (this.y >= topY && this.y <= bottomY)
+      ) {
+        this.vx = -this.vx;
       }
     }
+  }
+
+  goal(player) {
+    player.score++;
+    this.reset();
+    console.log(player.score);
+  }
+
+  //this resets the ball after a player scores a "goal"
+  reset() {
+    this.x = this.boardWidth / 2;
+    this.y = this.boardHeight / 2;
+    this.vy = 0;
+    while (this.vy === 0) {
+      this.vy = Math.floor(Math.random() * 10 - 5);
+    }
+    this.vx = this.direction * (6 - Math.abs(this.vy));
   }
 
   render(svg, player1, player2) {
@@ -68,6 +74,16 @@ export default class Ball {
 
     this.wallCollision();
     this.paddleCollision(player1, player2);
+
+    const rightGoal = this.x + this.radius >= this.boardWidth;
+    const leftGoal = this.x - this.radius <= 0;
+    if (rightGoal) {
+      this.goal(player1);
+      this.direction = 1;
+    } else if (leftGoal) {
+      this.goal(player2);
+      this.direction = -1;
+    }
 
     //draw ball
     let ball = document.createElementNS(SVG_NS, 'circle');

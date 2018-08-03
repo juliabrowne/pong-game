@@ -50,10 +50,25 @@ export default class Game {
 			this.height,
 		)
 
-	}
+		//keydown for pausing game
+		document.addEventListener('keydown', event => {
+			switch (event.key) {
+				case KEYS.spaceBar:
+					this.pause = !this.pause;
+					break;
+			}
+		});
+
+
+	} //end of constructor
 
 	render() {
+		//pause rendering
+		if (this.pause) {
+			return;
+		}
 
+		//empty out last frame before re-rendering
 		this.gameElement.innerHTML = '';
 
 		let svg = document.createElementNS(SVG_NS, 'svg');
@@ -70,7 +85,7 @@ export default class Game {
 		this.player2.render(svg);
 
 		//render the ball
-		this.ball.render(svg);
+		this.ball.render(svg, this.player1, this.player2);
 	}
 
 }

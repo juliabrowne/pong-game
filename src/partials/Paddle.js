@@ -65,14 +65,25 @@ export default class Paddle {
       this.down();
     }
 
-    let rect = document.createElementNS(SVG_NS, 'rect');
-    rect.setAttributeNS(null, 'fill', 'white');
-    rect.setAttributeNS(null, 'width', this.width);
-    rect.setAttributeNS(null, 'height', this.height);
-    rect.setAttributeNS(null, 'x', this.x);
-    rect.setAttributeNS(null, 'y', this.y);
 
-    svg.appendChild(rect);
+    let img = document.createElementNS(SVG_NS,'image');
+    img.setAttributeNS(null,'height', this.height);
+    img.setAttributeNS(null,'width', this.width);
+    img.setAttributeNS(null, 'href', './jim.png');
+    img.setAttributeNS(null,'x', this.x);
+    img.setAttributeNS(null,'y', this.y);
+    img.setAttributeNS(null, 'visibility', 'visible');
+    svg.appendChild(img);
+
+
+    // let rect = document.createElementNS(SVG_NS, 'rect');
+    // rect.setAttributeNS(null, 'fill', '#353535');
+    // rect.setAttributeNS(null, 'width', this.width);
+    // rect.setAttributeNS(null, 'height', this.height);
+    // rect.setAttributeNS(null, 'x', this.x);
+    // rect.setAttributeNS(null, 'y', this.y);
+
+    // svg.appendChild(rect);
   }
 
 }

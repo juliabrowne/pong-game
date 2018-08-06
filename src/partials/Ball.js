@@ -89,7 +89,7 @@ export default class Ball {
 
     //draw ball
     let ball = document.createElementNS(SVG_NS, 'circle');
-    ball.setAttributeNS(null, 'fill', 'white');
+    ball.setAttributeNS(null, 'fill', 'orange');
     ball.setAttributeNS(null, 'r', this.radius);
     ball.setAttributeNS(null, 'cx', this.x); //control ball movement
     ball.setAttributeNS(null, 'cy', this.y); //control ball movement

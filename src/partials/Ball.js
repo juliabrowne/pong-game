@@ -9,7 +9,7 @@ export default class Ball {
     this.boardHeight = boardHeight;
     this.direction = 1;
     this.reset();
-    this.ping = new Audio('public/sounds/pong-03.wav');
+    this.ping = new Audio('public/sounds/shesaid.wav');
   }
 
   wallCollision() {

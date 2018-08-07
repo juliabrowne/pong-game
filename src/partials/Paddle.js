@@ -65,25 +65,33 @@ export default class Paddle {
       this.down();
     }
 
+    // let SVG_NS = 'http://www.w3.org/2000/svg';
+    // let XLink_NS = 'http://www.w3.org/1999/xlink';
+    // let image = document.createElementNS(SVG_NS, 'image');
+    // image.setAttributeNS(null, 'width', this.width);
+    // image.setAttributeNS(null, 'height', this.height);
+    // image.setAttributeNS(XLink_NS, 'xlink:href', './jim.png');
 
-    let img = document.createElementNS(SVG_NS,'image');
-    img.setAttributeNS(null,'height', this.height);
-    img.setAttributeNS(null,'width', this.width);
-    img.setAttributeNS(null, 'href', './jim.png');
-    img.setAttributeNS(null,'x', this.x);
-    img.setAttributeNS(null,'y', this.y);
-    img.setAttributeNS(null, 'visibility', 'visible');
-    svg.appendChild(img);
+    // svg.appendChild(image);
 
+    // let img = document.createElementNS(SVG_NS,'image');
+    // img.setAttributeNS(null,'height', this.height);
+    // img.setAttributeNS(null,'width', this.width);
+    // img.setAttributeNS(null, 'href', './jim.png');
+    // img.setAttributeNS(null,'x', this.x);
+    // img.setAttributeNS(null,'y', this.y);
+    // img.setAttributeNS(null, 'visibility', 'visible');
+    // svg.appendChild(img);
 
-    // let rect = document.createElementNS(SVG_NS, 'rect');
-    // rect.setAttributeNS(null, 'fill', '#353535');
-    // rect.setAttributeNS(null, 'width', this.width);
-    // rect.setAttributeNS(null, 'height', this.height);
-    // rect.setAttributeNS(null, 'x', this.x);
-    // rect.setAttributeNS(null, 'y', this.y);
+    let rect = document.createElementNS(SVG_NS, 'rect');
+    rect.setAttributeNS(null, 'fill', 'white');
+    rect.setAttributeNS(null, 'width', this.width);
+    rect.setAttributeNS(null, 'height', this.height);
+    rect.setAttributeNS(null, 'x', this.x);
+    rect.setAttributeNS(null, 'y', this.y);
 
-    // svg.appendChild(rect);
+    svg.appendChild(rect);
+
   }
 
 }

@@ -20,6 +20,4 @@ export default class Score {
 
     svg.appendChild(text);
   }
-
-
 }

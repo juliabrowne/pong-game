@@ -4,7 +4,6 @@ This is an Office-themed old-school pong game! Officially titled "Michael Scott'
 
 The project was animated using JavaScript (includes paddle movement, ball movement, and score-keeping). Webpack was used to bundle the code.
 
-![Game Screenshot](/Screen Shot 2018-09-11 at 14.00.15.png)
 
 ## Tools Used
 

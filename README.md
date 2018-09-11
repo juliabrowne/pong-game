@@ -1,8 +1,18 @@
 # Pong Game
 
-A basic pong game using SVGs.
+This is an Office-themed old-school pong game! Officially titled "Michael Scott's Dunder Mifflin Scranton Meredith Palmer Memorial Celebrity Rabies Awareness Pro-Am Fun Pong for the Cure", the game resets the score and declares a winner at 5 points. As an added bonus, every time the ball hits the paddle Michael can be heard saying "That's what she said!".
 
-## Setup
+The project was animated using JavaScript (includes paddle movement, ball movement, and score-keeping). Webpack was used to bundle the code.
+
+![Game Screenshot](/Screen Shot 2018-09-11 at 14.00.15.png)
+
+## Tools Used
+
+- JavaScript
+- Webpack
+- HTML & CSS
+
+### Setup
 
 **Install dependencies:**
 
